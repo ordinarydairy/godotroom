@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://crfems1mcip1j"]
+
+[ext_resource type="Script" uid="uid://wgi348t5ld6t" path="res://script/character_body_2d.gd" id="1_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://b4qo1jee5q01i" path="res://textures/Basic Charakter Spritesheet.png" id="1_o5qli"]
+
+[node name="Main" type="Node2D" unique_id=1535272162]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1219884377]
+script = ExtResource("1_0wfyh")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=470327060]
+texture = ExtResource("1_o5qli")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1394310355]
+zoom = Vector2(3, 3)
