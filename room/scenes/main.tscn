@@ -2,14 +2,314 @@
 
 [ext_resource type="Script" uid="uid://wgi348t5ld6t" path="res://script/character_body_2d.gd" id="1_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://b4qo1jee5q01i" path="res://textures/Basic Charakter Spritesheet.png" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://d21hlhhxmv2w" path="res://textures/pixil-frame-0.png" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://ct1q4uaulbven" path="res://scenes/box.gd" id="4_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://dwajtwj31w1ri" path="res://textures/Chest.png" id="5_tefeu"]
+[ext_resource type="Script" uid="uid://72b0bytvxq6i" path="res://scenes/dialoguebox.gd" id="6_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://cfjy8fgvqqcok" path="res://textures/text.png" id="6_tefeu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tipki"]
+atlas = ExtResource("1_o5qli")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85g3d"]
+atlas = ExtResource("1_o5qli")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_choun"]
+atlas = ExtResource("1_o5qli")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya4ey"]
+atlas = ExtResource("1_o5qli")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wfyh"]
+atlas = ExtResource("1_o5qli")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sugp2"]
+atlas = ExtResource("1_o5qli")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eb6dy"]
+atlas = ExtResource("1_o5qli")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trceg"]
+atlas = ExtResource("1_o5qli")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8y0u"]
+atlas = ExtResource("1_o5qli")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkv2x"]
+atlas = ExtResource("1_o5qli")
+region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyhfs"]
+atlas = ExtResource("1_o5qli")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbgi4"]
+atlas = ExtResource("1_o5qli")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tefeu"]
+atlas = ExtResource("1_o5qli")
+region = Rect2(96, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6xl0"]
+atlas = ExtResource("1_o5qli")
+region = Rect2(144, 96, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jyhfs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tipki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85g3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_choun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ya4ey")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wfyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sugp2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eb6dy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trceg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8y0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkv2x")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyhfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbgi4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tefeu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6xl0")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tefeu"]
+size = Vector2(8, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jscy8"]
+size = Vector2(24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yc10j"]
+atlas = ExtResource("5_tefeu")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jscy8"]
+atlas = ExtResource("5_tefeu")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pm3ni"]
+atlas = ExtResource("5_tefeu")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6deb"]
+atlas = ExtResource("5_tefeu")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og1vs"]
+atlas = ExtResource("5_tefeu")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbj1t"]
+atlas = ExtResource("5_tefeu")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muem4"]
+atlas = ExtResource("5_tefeu")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dp3eg"]
+atlas = ExtResource("5_tefeu")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ld40"]
+atlas = ExtResource("5_tefeu")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqmmt"]
+atlas = ExtResource("5_tefeu")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yc10j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yc10j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jscy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pm3ni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6deb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_og1vs")
+}],
+"loop": false,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbj1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_muem4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dp3eg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ld40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqmmt")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgi4"]
+size = Vector2(15, 15)
 
 [node name="Main" type="Node2D" unique_id=1535272162]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1219884377]
-script = ExtResource("1_0wfyh")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=512899644]
+scale = Vector2(3, 3)
+texture = ExtResource("3_sugp2")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=470327060]
-texture = ExtResource("1_o5qli")
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=1190314524]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/StaticBody2D" unique_id=1007799401]
+position = Vector2(-0.33333334, 0)
+build_mode = 1
+polygon = PackedVector2Array(-12.000001, -2, -20.666666, -2, -20.666666, 15, 3.3333333, 15, 3.3333333, 8, 25, 8, 25, -15.666667, -12.666667, -15.666667, -12.333334, -2.3333335)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1219884377 node_paths=PackedStringArray("animated_sprite") groups=["player"]]
+z_index = 99
+collision_mask = 3
+script = ExtResource("1_0wfyh")
+animated_sprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=479506299]
+sprite_frames = SubResource("SpriteFrames_jyhfs")
+animation = &"down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1927146417]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_tefeu")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1394310355]
-zoom = Vector2(3, 3)
+zoom = Vector2(6, 6)
+
+[node name="box" type="Node2D" parent="." unique_id=237266168 node_paths=PackedStringArray("animated_sprite")]
+position = Vector2(-7, 14)
+script = ExtResource("4_tbgi4")
+animated_sprite = NodePath("AnimatedBox2D")
+
+[node name="Area2D" type="Area2D" parent="box" unique_id=481517982]
+position = Vector2(61, -34)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box/Area2D" unique_id=2070607265]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_jscy8")
+
+[node name="AnimatedBox2D" type="AnimatedSprite2D" parent="box" unique_id=924816306]
+position = Vector2(61, -34)
+sprite_frames = SubResource("SpriteFrames_yc10j")
+animation = &"open"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="box" unique_id=2126082668]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box/StaticBody2D" unique_id=450508509]
+position = Vector2(61, -34.5)
+shape = SubResource("RectangleShape2D_tbgi4")
+
+[node name="dialoguebox" type="CanvasLayer" parent="." unique_id=790895453 node_paths=PackedStringArray("label")]
+script = ExtResource("6_o6xl0")
+dialoguelist = Array[String](["hi", "bye
+"])
+label = NodePath("TextureRect/MarginContainer/Label")
+
+[node name="TextureRect" type="TextureRect" parent="dialoguebox" unique_id=661496915]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -450.0
+offset_top = -259.0
+offset_right = 450.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_tefeu")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="dialoguebox/TextureRect" unique_id=660501892]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 30.0
+offset_right = 749.0
+offset_bottom = 201.0
+
+[node name="Label" type="Label" parent="dialoguebox/TextureRect/MarginContainer" unique_id=18018726]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "hi chat"
+autowrap_mode = 3
+
+[connection signal="body_entered" from="box/Area2D" to="box" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="box/Area2D" to="box" method="_on_area_2d_body_exited"]
+[connection signal="gui_input" from="dialoguebox/TextureRect" to="dialoguebox" method="_on_texture_rect_gui_input"]
