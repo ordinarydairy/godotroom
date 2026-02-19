@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @export var animated_sprite : AnimatedSprite2D
 
+var time = 0.0
 const SPEED = 100.0
 
 
@@ -46,4 +47,9 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_ready() -> void:
-	Dialogic.start('start') # Replace with function body.
+	Dialogic.start('start')
+	
+func _process(delta):
+	time += delta
+	var pulse = 1.0 + sin(time * 3.0) * 0.05  # 3.0 = speed, 0.05 = intensity
+	scale.y = pulse	 # Replace with function body.

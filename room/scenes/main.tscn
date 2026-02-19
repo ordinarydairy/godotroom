@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://crfems1mcip1j"]
 
 [ext_resource type="Script" uid="uid://wgi348t5ld6t" path="res://script/character_body_2d.gd" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://dkeefjahofneq" path="res://scenes/main.gd" id="1_jscy8"]
 [ext_resource type="Texture2D" uid="uid://85u5h50syxfo" path="res://textures/Untitled_Artwork 8.jpg" id="1_o6xl0"]
 [ext_resource type="Script" uid="uid://bnetetc138cpl" path="res://scenes/door.gd" id="2_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://dy7okepfpjmtw" path="res://textures/Untitled_Artwork 34.png" id="3_o6xl0"]
+[ext_resource type="Script" uid="uid://kwvc0y0c2f1w" path="res://scenes/mirror.gd" id="4_dp3eg"]
 [ext_resource type="Script" uid="uid://crkvlvixyew1d" path="res://scenes/window.gd" id="4_jkv2x"]
 [ext_resource type="Script" uid="uid://ct1q4uaulbven" path="res://scenes/box.gd" id="4_tbgi4"]
+[ext_resource type="Script" uid="uid://brsrx1vayev74" path="res://scenes/books.gd" id="5_0ld40"]
 [ext_resource type="Script" uid="uid://b3qagmk7n3ui7" path="res://scenes/window2s.gd" id="5_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://dwajtwj31w1ri" path="res://textures/Chest.png" id="5_tefeu"]
+[ext_resource type="Script" uid="uid://fn2oakjtwsfj" path="res://scenes/lamp.gd" id="6_gqmmt"]
 [ext_resource type="Texture2D" uid="uid://dx76ovyumtvvm" path="res://textures/window-1.png" id="6_muem4"]
 [ext_resource type="Texture2D" uid="uid://b41x033ojf4h8" path="res://textures/window-2 2.png" id="7_dp3eg"]
 [ext_resource type="AudioStream" uid="uid://b6c1p14bc20p1" path="res://addons/dialogic/Example Assets/sound-effects/typing1.wav" id="7_muem4"]
@@ -15,8 +19,11 @@
 [ext_resource type="Script" uid="uid://vmafdn5gfrk4" path="res://scenes/node_2d.gd" id="8_85g3d"]
 [ext_resource type="Texture2D" uid="uid://eg3iogc57u5x" path="res://textures/Basic Furniture.png" id="9_choun"]
 [ext_resource type="Texture2D" uid="uid://dfkiijeknf2h3" path="res://textures/window-4 2.png" id="9_gqmmt"]
+[ext_resource type="Script" uid="uid://dcpbepfvfqsgb" path="res://scenes/laptop.gd" id="9_pm3ni"]
 [ext_resource type="Texture2D" uid="uid://d0c4odirp0xwk" path="res://textures/window-5 2.png" id="10_yc10j"]
 [ext_resource type="Texture2D" uid="uid://6cbfknoahws0" path="res://textures/window-6 2.png" id="11_jscy8"]
+[ext_resource type="Texture2D" uid="uid://b1yshyoncge7i" path="res://textures/bed.png" id="23_y6deb"]
+[ext_resource type="Script" uid="uid://dvqpnalo5q0gc" path="res://scenes/area_2d.gd" id="24_og1vs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tipki"]
 atlas = ExtResource("3_o6xl0")
@@ -33,9 +40,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o6xl0"]
-radius = 6.0
-height = 18.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_muem4"]
+size = Vector2(12, 11)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y6deb"]
 animations = [{
@@ -174,6 +180,7 @@ size = Vector2(18, 20.5)
 size = Vector2(14, 16)
 
 [node name="Main" type="Node2D" unique_id=1535272162]
+script = ExtResource("1_jscy8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=512899644]
 scale = Vector2(0.1, 0.1)
@@ -195,6 +202,46 @@ polygon = PackedVector2Array(719.99994, 439.99997, 719.99994, -99.99999, 499.999
 [node name="Typing1" type="AudioStreamPlayer" parent="Sprite2D/Area2D" unique_id=286643929]
 stream = ExtResource("7_muem4")
 
+[node name="mirror" type="Area2D" parent="Sprite2D" unique_id=1176633700]
+scale = Vector2(9.999999, 9.999999)
+script = ExtResource("4_dp3eg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/mirror" unique_id=857950753]
+scale = Vector2(0.1, 0.1)
+polygon = PackedVector2Array(369.99997, 159.99998, 459.99997, 209.99998, 469.99997, -179.99998, 369.99997, -229.99998)
+
+[node name="Typing1" type="AudioStreamPlayer" parent="Sprite2D/mirror" unique_id=693539499]
+stream = ExtResource("7_muem4")
+
+[node name="books" type="Area2D" parent="Sprite2D" unique_id=68162486]
+scale = Vector2(9.999999, 9.999999)
+script = ExtResource("5_0ld40")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/books" unique_id=354222000]
+scale = Vector2(0.1, 0.1)
+polygon = PackedVector2Array(-630.00006, -70.00001, -400.00003, -190.00002, -400.00003, -290.00003, -480.00006, -340.00003, -700.00006, -210.00002, -710.00006, -100.00001)
+
+[node name="Typing1" type="AudioStreamPlayer" parent="Sprite2D/books" unique_id=904799358]
+stream = ExtResource("7_muem4")
+
+[node name="lamp" type="Area2D" parent="Sprite2D" unique_id=318700720]
+script = ExtResource("6_gqmmt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/lamp" unique_id=1499661060]
+polygon = PackedVector2Array(-319.99997, -59.999992, -269.99997, -39.999996, -259.99997, 29.999996, -289.99997, 39.999996, -289.99997, 59.999992, -259.99997, 79.99999, -259.99997, 109.99999, -309.99997, 109.99999, -339.99997, 89.99999, -329.99997, 59.999992, -309.99997, 59.999992, -309.99997, 39.999996, -329.99997, 19.999998, -329.99997, -9.999999)
+
+[node name="Typing1" type="AudioStreamPlayer" parent="Sprite2D/lamp" unique_id=757031503]
+stream = ExtResource("7_muem4")
+
+[node name="laptop" type="Area2D" parent="Sprite2D" unique_id=2125535367]
+script = ExtResource("9_pm3ni")
+
+[node name="Typing1" type="AudioStreamPlayer" parent="Sprite2D/laptop" unique_id=876222805]
+stream = ExtResource("7_muem4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/laptop" unique_id=241464111]
+polygon = PackedVector2Array(49.999996, -109.99999, 49.999996, -209.99998, 169.99998, -149.99998, 169.99998, -39.999996, 79.99999, 9.999999, -39.999996, -59.999992)
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1219884377 node_paths=PackedStringArray("animated_sprite") groups=["player"]]
 z_index = 99
 collision_mask = 3
@@ -208,8 +255,8 @@ sprite_frames = SubResource("SpriteFrames_jyhfs")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1927146417]
-position = Vector2(53, 42)
-shape = SubResource("CapsuleShape2D_o6xl0")
+position = Vector2(53, 45.5)
+shape = SubResource("RectangleShape2D_muem4")
 debug_color = Color(0.8878741, 0.043303974, 0.78874314, 0.41960785)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1394310355]
@@ -280,10 +327,30 @@ shape = SubResource("RectangleShape2D_85g3d")
 position = Vector2(-23, -34)
 shape = SubResource("RectangleShape2D_choun")
 
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=592997359]
+y_sort_enabled = true
+position = Vector2(-37.000004, 30.999998)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("23_y6deb")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D2" unique_id=355342755]
+script = ExtResource("24_og1vs")
+
+[node name="Typing1" type="AudioStreamPlayer" parent="Sprite2D2/Area2D" unique_id=1698868994]
+stream = ExtResource("7_muem4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D2/Area2D" unique_id=1613510468]
+polygon = PackedVector2Array(-329.99994, -39.99997, -329.99994, 120.00003, -289.99994, 150.00003, -259.99994, 130.00003, -259.99994, 100.00003, -239.99994, 100.00003, -239.99994, 130.00003, 50.00003, 300, 40.00003, 350, 90.00003, 380, 130.00003, 360, 130.00003, 310, 330, 200, 330, 210, 360, 230, 390, 210, 390, 160.00003, 400, 160.00003, 400, 40.00003, -59.99997, -209.99994, -59.99997, -369.99994, -79.99997, -389.99994, -329.99994, -249.99994)
+
 [connection signal="input_event" from="Sprite2D/Area2D" to="Sprite2D/Area2D" method="_on_input_event"]
+[connection signal="input_event" from="Sprite2D/mirror" to="Sprite2D/mirror" method="_on_input_event"]
+[connection signal="input_event" from="Sprite2D/books" to="Sprite2D/books" method="_on_input_event"]
+[connection signal="input_event" from="Sprite2D/lamp" to="Sprite2D/lamp" method="_on_input_event"]
+[connection signal="input_event" from="Sprite2D/laptop" to="Sprite2D/laptop" method="_on_input_event"]
 [connection signal="ready" from="CharacterBody2D" to="CharacterBody2D" method="_on_ready"]
 [connection signal="input_event" from="window/Area2D" to="window/Area2D" method="_on_input_event"]
 [connection signal="body_entered" from="box/Area2D" to="box" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="box/Area2D" to="box" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="dresser/Area2D" to="dresser" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="dresser/Area2D" to="dresser" method="_on_area_2d_body_exited"]
+[connection signal="input_event" from="Sprite2D2/Area2D" to="Sprite2D2/Area2D" method="_on_input_event"]

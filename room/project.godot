@@ -21,9 +21,18 @@ Dialogic="*uid://ds2q0uclmolvu"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"hanako": "res://hanako.dch",
+"you": "res://you.dch"
+}
 directories/dtl_directory={
+"bed": "res://bed.dtl",
+"books": "res://books.dtl",
+"chat": "res://chat.dtl",
 "door": "res://door.dtl",
+"lamp": "res://lamp.dtl",
+"laptop": "res://laptop.dtl",
+"mirror": "res://mirror.dtl",
 "start": "res://start.dtl",
 "timeline": "res://timeline.dtl",
 "window": "res://window.dtl",
@@ -32,7 +41,9 @@ directories/dtl_directory={
 layout/style_directory={}
 layout/style_list=[]
 layout/default_style="Default"
-variables={}
+variables={
+"door_clicks": 0.0
+}
 
 [display]
 
