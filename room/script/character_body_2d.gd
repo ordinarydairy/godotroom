@@ -26,20 +26,24 @@ func _physics_process(delta: float) -> void:
 		#velocity.x = direction * SPEED
 	#else:
 		#velocity.x = move_toward(velocity.x, 0, SPEED)
-	if velocity.length() > 0:	
-		if velocity.x > 0.01:
-			animated_sprite.flip_h = true	
-			animated_sprite.play("walk")
-		elif velocity.x < -0.01:
-			animated_sprite.flip_h = false
-			animated_sprite.play("walk")
-		if velocity.y > 0.01:
-			animated_sprite.play("down")
-		if velocity.y < -0.01:
-			animated_sprite.play("up")
-	else: 
-		animated_sprite.play("idle")
+	#if velocity.length() > 0:	
+		#if velocity.x > 0.01:
+			#animated_sprite.flip_h = true	
+			#animated_sprite.play("walk")
+		#elif velocity.x < -0.01:
+			#animated_sprite.flip_h = false
+			#animated_sprite.play("walk")
+		#if velocity.y > 0.01:
+			#animated_sprite.play("down")
+		#if velocity.y < -0.01:
+			#animated_sprite.play("up")
+	#else: 
+		#animated_sprite.play("idle")
 
 
 
 	move_and_slide()
+
+
+func _on_ready() -> void:
+	Dialogic.start('start') # Replace with function body.
